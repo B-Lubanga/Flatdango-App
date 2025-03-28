@@ -1,0 +1,106 @@
+:root{
+    --main-radius:5px;
+    --main-padding:5px;
+    }
+    
+    body{
+        background-color:rgb(173, 175, 175);
+    }
+    
+     .container{
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 0.fr 0.1fr  0.1fr 0.1fr;
+        grid-template-rows: 0.1fr 0.1fr  0.1fr; 
+        grid-template-areas: 
+          "nav nav nav "
+          "myMovies movie-Details first-Movie"
+          "footer footer  footer"
+          ;
+         grid-gap: 0.2rem; 
+         font-weight: 800;
+         font-family: 'Mansalva', cursive;
+         font-family: 'Montserrat', sans-serif;
+         font-family: 'Mukta', sans-serif;
+         
+         text-transform: uppercase;
+         font-size: 12px;
+         color: black;
+         text-align: center;
+         border-radius: 20px;
+     }
+    
+     nav{
+        background-color: rgb(42, 97, 97);
+        grid-area: nav;
+        border-radius: var(--main-radius);
+        padding: var(--main-padding);
+     }
+     #first-Movie{
+        background: rgb(79, 129, 129);
+        grid-area:first-Movie ;
+        border-radius: var(--main-radius);
+        padding: var(--main-padding);
+     }
+    
+     #first-Movie img{
+        height:400px;
+        width: 300px;
+     }
+    
+    
+    #first-Movie h2{
+        font-weight: bolder;
+        color: white;
+    }
+    
+     #myMovies{
+        background: rgb(84, 129, 129);
+        grid-area: myMovies;
+        border-radius: var(--main-radius);
+        padding: var(--main-padding);
+     }
+    
+     #movie-List li:hover{
+        color: white;
+        pointer-events: visibleStroke;
+    
+     }
+    
+     #movie-Details{
+        background: #68a5a5;
+        grid-area: movie-Details;
+        border-radius: var(--main-radius);
+        padding: var(--main-padding);
+    
+     }
+    
+     #movie-Details img{
+        height: 400px;
+        width: 300px;
+     }
+    
+     footer{
+        background-color: rgb(42, 97, 97);
+        grid-area: footer;
+        border-radius: var(--main-radius);
+        padding: var(--main-padding);
+        font-weight: bolder;
+        font-size: larger;
+        color: white;
+     }
+    
+     @media only screen and(max-width:550px) {
+        .container{
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.3fr 0.4fr 1.2fr 1.2fr 0.3fr;
+            grid-template-areas:
+            "nav"
+            "myMovies"
+            "first-Movie"
+            "movie-Details"
+            "footer" ;
+        }
+        
+     }
